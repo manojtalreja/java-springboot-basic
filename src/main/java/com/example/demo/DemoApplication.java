@@ -13,11 +13,11 @@ import org.springframework.context.annotation.Configuration;
 public class DemoApplication {
     
     @Value("${spring.test.env}")
-    private static final String NAME;
+    private String name;
    
     @RequestMapping("/")
     String home() {
-        return ("Hello World! " + NAME);
+        return ("Hello World! " + this.name);
     }
 
     public static void main(String[] args) {
