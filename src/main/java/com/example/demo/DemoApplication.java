@@ -9,11 +9,11 @@ import org.springframework.beans.factory.annotation.Value;
 @RestController
 @SpringBootApplication
 public class DemoApplication {
-
-    public DemoApplication (String NAME) { }
     
     @Value("${spring.test.env}")
     private static final String NAME;
+    
+    public DemoApplication (String NAME) { }
     
     @RequestMapping("/")
     String home() {
