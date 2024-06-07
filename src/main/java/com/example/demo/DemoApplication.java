@@ -10,9 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class DemoApplication {
 
+    @Value("${spring.test.env}")
+    private static final String NAME;
+    
     @RequestMapping("/")
     String home() {
-        return "Hello World! " + ${spring.test.env};
+        return ("Hello World! " + NAME);
     }
 
     public static void main(String[] args) {
