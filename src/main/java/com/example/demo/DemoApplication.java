@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class DemoApplication {
     
-    @Value("${spring.test.env}")
+    @Value("${spring.test.env:'Manoj'}")
     private String name;
    
     @RequestMapping("/")
