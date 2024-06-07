@@ -5,16 +5,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
 
 @RestController
 @SpringBootApplication
+@Configuration
 public class DemoApplication {
     
     @Value("${spring.test.env}")
     private static final String NAME;
-    
-    public DemoApplication (String NAME) { }
-    
+   
     @RequestMapping("/")
     String home() {
         return ("Hello World! " + NAME);
