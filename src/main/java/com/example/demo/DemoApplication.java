@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Value;
 @SpringBootApplication
 public class DemoApplication {
 
+    public DemoApplication (String NAME) { }
+    
     @Value("${spring.test.env}")
     private static final String NAME;
     
