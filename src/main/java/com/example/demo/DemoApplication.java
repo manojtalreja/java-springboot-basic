@@ -25,11 +25,11 @@ public class DemoApplication {
     String home() {
         String message;
 
-        message = this.name + " " + dbCollectorJobsConfig.getJobs().size();
+        message = this.name + " - " + dbCollectorJobsConfig.getJobs().size();
         for (DbCollectorJobsConfig.Job job: dbCollectorJobsConfig.getJobs()) {
             message += job.getEnabled();    
         }
-        return ("Hello World !!!!! " + message);
+        return ("Hello World -> " + message);
     }
 
     public static void main(String[] args) {
