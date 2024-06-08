@@ -1,0 +1,6 @@
+db-collector-jobs:
+  - name: queue depth
+    enabled: true
+
+  - name: DB Version
+    enabled: true
