@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
+@Configuration
 @ConfigurationProperties("db-collector-jobs")
 public class DbCollectorJobsConfig {
   private List<Job> jobs;
