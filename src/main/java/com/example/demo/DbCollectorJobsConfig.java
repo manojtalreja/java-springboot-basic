@@ -7,9 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import java.util.List;
 
-@Component
-@EnableConfigurationProperties
-@ConfigurationProperties(prefix = "db-collector-jobs")
+@Configuration
 public class DbCollectorJobsConfig {
   private List<Job> jobs;
 
@@ -34,11 +32,11 @@ public class DbCollectorJobsConfig {
     }
   }
 
-  public List<Job> getJobs() {
-    return jobs;
+  
+  @Bean("dbCollectorJobs")
+  @ConfigurationProperties("db-collector-jobs")
+  public List<Job> dbCollectorJobs() {
+    return new ArrayList<>();
   }
 
-  public void setJobs(List<Job> jobs) {
-    this.jobs = jobs;
-  }
 }
