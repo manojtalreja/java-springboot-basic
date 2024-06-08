@@ -21,7 +21,7 @@ public class DemoApplication {
    
     @RequestMapping("/")
     String home() {
-       String message;
+       String message = this.name;
 
        for (DbCollectorJobsConfig.Job job: dbCollectorJobsConfig.getJobs()) {
             message += job.getEnabled();    
