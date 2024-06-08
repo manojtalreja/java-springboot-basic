@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import java.util.List;
+import java.util.ArrayList;
+
 
 @Configuration
 public class DbCollectorJobsConfig {
