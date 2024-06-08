@@ -29,7 +29,7 @@ public class DemoApplication {
         for (DbCollectorJobsConfig.Job job: dbCollectorJobsConfig.getJobs()) {
             message += job.getEnabled();    
         }
-        return ("Hello World !!!! " + message);
+        return ("Hello World !!!!! " + message);
     }
 
     public static void main(String[] args) {
