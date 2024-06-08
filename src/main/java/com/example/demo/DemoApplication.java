@@ -7,23 +7,29 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 @RestController
 @SpringBootApplication
 @Configuration
 public class DemoApplication {
    
-    @Autowired
-    DbCollectorJobsConfig dbCollectorJobsConfig;
+    
+    private List<DbCollectorJobsConfig.Job> dbCollectorJobsConfig;
     
     @Value("${spring.test.env:'Manoj'}")
     private String name;
+
+    @Autowired
+    public DemoApplication(@Qualifier("dbCollectorJobs") List<DbCollectorJobsConfig.Job> jobsConfig) {
+       this.dbCollectorJobsConfig = jobsConfig;
+    }
    
     @RequestMapping("/")
     String home() {
        String message = this.name;
 
-       for (DbCollectorJobsConfig.Job job: dbCollectorJobsConfig.getJobs()) {
+       for (DbCollectorJobsConfig.Job job: dbCollectorJobsConfig) {
             message += job.getEnabled();    
         }
        
