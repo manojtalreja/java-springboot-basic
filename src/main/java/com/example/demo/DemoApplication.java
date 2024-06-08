@@ -12,12 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 @SpringBootApplication
 @Configuration
 public class DemoApplication {
-    private final DbCollectorJobsConfig dbCollectorJobsConfig;
-
+   
     @Autowired
-    public DemoApplication(DbCollectorJobsConfig dbCollectorJobsConfig) {
-        this.dbCollectorJobsConfig = dbCollectorJobsConfig;
-    }
+    DbCollectorJobsConfig dbCollectorJobsConfig;
     
     @Value("${spring.test.env:'Manoj'}")
     private String name;
