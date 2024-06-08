@@ -6,18 +6,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @RestController
 @SpringBootApplication
 @Configuration
 public class DemoApplication {
+    private final DbCollectorJobsConfig dbCollectorJobsConfig;
+
+    public DemoApplication(DbCollectorJobsConfig dbCollectorJobsConfig) {
+        this.dbCollectorJobsConfig = dbCollectorJobsConfig;
+    }
     
     @Value("${spring.test.env:'Manoj'}")
     private String name;
    
     @RequestMapping("/")
     String home() {
-        return ("Hello World !!! " + this.name);
+        String message = this.name;
+        
+        for (DbCollectorJobsConfig.Job job: dbCollectorJobsConfig.getJobs()) {
+            message += job.getEnabled();    
+        }
+        return ("Hello World !!! " + message);
     }
 
     public static void main(String[] args) {
