@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class DemoApplication {
     private final DbCollectorJobsConfig dbCollectorJobsConfig;
 
+    @Autowired
     public DemoApplication(DbCollectorJobsConfig dbCollectorJobsConfig) {
         this.dbCollectorJobsConfig = dbCollectorJobsConfig;
     }
