@@ -7,11 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 @RestController
 @SpringBootApplication
-@EnableConfigurationProperties
 @Configuration
 public class DemoApplication {
    
