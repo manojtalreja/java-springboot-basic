@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Configuration
-@ConfigurationProperties("db-collector-jobs")
+@Component
+@ConfigurationProperties(prefix = "db-collector-jobs")
 public class DbCollectorJobsConfig {
   private List<Job> jobs;
 
