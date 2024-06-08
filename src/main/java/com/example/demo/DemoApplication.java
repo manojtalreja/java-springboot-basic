@@ -25,7 +25,7 @@ public class DemoApplication {
     String home() {
         String message = this.name;
 
-        message += dbCollectorJobsConfig.getJobs().length();
+        message += dbCollectorJobsConfig.getJobs().length;
         for (DbCollectorJobsConfig.Job job: dbCollectorJobsConfig.getJobs()) {
             message += job.getEnabled();    
         }
